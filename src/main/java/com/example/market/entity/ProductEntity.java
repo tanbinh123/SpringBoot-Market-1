@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Product {
+public class ProductEntity {
 
 	@Id
 	@GeneratedValue
@@ -19,15 +19,15 @@ public class Product {
 	private String image;
 
 	@ManyToOne
-	private User owner;
+	private UserEntity owner;
 
 	@ManyToOne
-	private Shop shop;
+	private ShopEntity shop;
 
-	public Product() {
+	public ProductEntity() {
 	}
 
-	public Product(String name, float price, String image, User owner) {
+	public ProductEntity(String name, float price, String image, UserEntity owner) {
 		super();
 		this.name = name;
 		this.price = price;
@@ -67,19 +67,19 @@ public class Product {
 		this.image = image;
 	}
 
-	public User getOwner() {
+	public UserEntity getOwner() {
 		return owner;
 	}
 
-	public void setOwner(User owner) {
+	public void setOwner(UserEntity owner) {
 		this.owner = owner;
 	}
 
-	public Shop getShop() {
+	public ShopEntity getShop() {
 		return shop;
 	}
 
-	public void setShop(Shop shop) {
+	public void setShop(ShopEntity shop) {
 		this.shop = shop;
 	}
 

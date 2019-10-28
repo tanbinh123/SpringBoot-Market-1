@@ -14,7 +14,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-public class User {
+public class UserEntity {
 
 	@Id
 	@GeneratedValue
@@ -34,16 +34,15 @@ public class User {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createdDate;
 
-	public User() {
+	public UserEntity() {
 	}
 
-	public User(String name, String surname, String email, String password, String avatar, Date createdDate) {
+	public UserEntity(String name, String surname, String email, String password, String avatar) {
 		this.name = name;
 		this.surname = surname;
 		this.email = email;
 		this.password = password;
 		this.avatar = avatar;
-		this.createdDate = createdDate;
 	}
 
 	public long getId() {

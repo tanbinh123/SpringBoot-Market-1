@@ -15,7 +15,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-public class Shop {
+public class ShopEntity {
 
 	@Id
 	@GeneratedValue
@@ -26,12 +26,12 @@ public class Shop {
 	private Date shopDate;
 
 	@ManyToOne
-	private User owner;
+	private UserEntity owner;
 
-	public Shop() {
+	public ShopEntity() {
 	}
 
-	public Shop(Date shopDate, User owner) {
+	public ShopEntity(Date shopDate, UserEntity owner) {
 		this.owner = owner;
 	}
 
@@ -51,11 +51,11 @@ public class Shop {
 		this.shopDate = shopDate;
 	}
 
-	public User getOwner() {
+	public UserEntity getOwner() {
 		return owner;
 	}
 
-	public void setOwner(User owner) {
+	public void setOwner(UserEntity owner) {
 		this.owner = owner;
 	}
 
